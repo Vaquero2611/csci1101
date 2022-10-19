@@ -24,7 +24,7 @@ letters_guessed = []
 while current_incorrect_guesses < num_of_incorrect_guesses and False in answer_guessed:
     print(f"Number of incorrect guesses left: {"num_of_incorrect_guesses-current_incorrect_guesses}")
     #game summary 
-    print(f"number of incorrect guesses left {"num_of_incorrect_guesses-current_incorrect_guesses}")
+    print(f"number of incorrect guesses left: {"num_of_incorrect_guesses-current_incorrect_guesses}")
     
     print("Guessed letters:", end="")
 
