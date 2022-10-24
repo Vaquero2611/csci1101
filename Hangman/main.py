@@ -1,7 +1,21 @@
 import re
+import random 
 
-# Getting the answer
-answer = "What's Up, Doc?"
+# Getting the answer.
+pool_file = open("hangman/hangman-sample-answer-practice.txt")
+
+pool_answers = []
+
+pool_answer_line = pool_file.readline()
+
+while pool_answer_line:
+    pool_answers.append(pool_answer_line)
+
+    pool_answer_line = pool_file.readline()
+
+pool_file.close()
+
+answer = random.choice(pool_answers)
 
 answer = answer.upper()
 
@@ -22,9 +36,9 @@ current_incorrect_guesses=0
 letters_guessed = []
 
 while current_incorrect_guesses < num_of_incorrect_guesses and False in answer_guessed:
-    print(f"Number of incorrect guesses left: {"num_of_incorrect_guesses-current_incorrect_guesses}")
+    print(f"Number of incorrect guesses left: {num_of_incorrect_guesses-current_incorrect_guesses}")
     #game summary 
-    print(f"number of incorrect guesses left: {"num_of_incorrect_guesses-current_incorrect_guesses}")
+    print(f"number of incorrect guesses left: {num_of_incorrect_guesses-current_incorrect_guesses}")
     
     print("Guessed letters:", end="")
 
@@ -32,7 +46,7 @@ while current_incorrect_guesses < num_of_incorrect_guesses and False in answer_g
         print(current_guessed_letter, end=" ")
 
     #Display puzzle board.  
-    for current_answer_index in range(len(answer):
+    for current_answer_index in range(len(answer)):
         if answer_guessed[current_answer_index]:
             print(answer[current_answer_index],end="")
         else:
